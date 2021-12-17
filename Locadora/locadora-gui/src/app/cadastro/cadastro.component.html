@@ -1,0 +1,33 @@
+<section>
+    <!-- CADASTRO CLIENTE -->
+    <div class = "cadastroCliente" >
+        <h1>Cadastro Cliente</h1>
+        <label for="">Email</label>
+        <input type="text" [(ngModel)]="usuarioRegCliente.email" >
+        <label for="">Senha</label>
+        <input type="password"  [(ngModel)]="usuarioRegCliente.senha" >
+        <label for="">Confirmar senha</label>
+        <input type="password"  [(ngModel)]="senhaConfCliente" >
+        <button (click)="cadastrar(usuarioRegCliente)" >Registrar</button>
+    </div>
+
+    <!-- CADASTRO ADM -->
+    <div class = "cadastroAdm" >
+        <h1>Cadastro ADM</h1>
+       
+            <label for="">Email</label>
+            <input type="text" [(ngModel)]="usuarioRegADM.email" >
+
+            <label for="">Credencial</label>
+            <input type="text"  placeholder="Exemplo: @1234"[(ngModel)]="usuarioRegADM.credencial">
+
+            <label for="">Senha</label>
+            <input type="password" [(ngModel)]="usuarioRegADM.senha" >
+
+            <label for="">Confirmar senha</label>
+            <input type="password"  [(ngModel)]="senhaConfADM" >
+            
+            <button (click)="cadastrar(usuarioRegADM)" >Registrar</button>
+       
+    </div>
+</section>

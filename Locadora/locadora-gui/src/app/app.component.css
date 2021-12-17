@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+header h1 {
+    text-align: center;
+    margin-top: 50px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+}
+
+  button {
+    width: 150px;
+    color: rgb(0, 0, 0);
+    background-image: linear-gradient(to right, rgba(181, 143, 212, 0.904),rgba(171, 52, 218, 0.712));
+    height: 50px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 5px;
+    
+  }
+
+
+  .cliente-btn {
+    margin-right: 50px;
+  }
+  

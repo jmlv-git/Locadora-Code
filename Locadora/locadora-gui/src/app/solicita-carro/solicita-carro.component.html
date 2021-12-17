@@ -1,0 +1,73 @@
+<h1>Solicitação de Carro</h1>
+
+<table>
+    <tr>
+        <td>
+            <h2>Informações do carro:</h2>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <h2>Data de retirada:</h2>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Dia:
+        </td>
+        <td>
+            <input type="number" name="diaRet" min="1" max="31" [(ngModel)] ="requisicao.dataRetirada.dia">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Mês:
+        </td>
+        <td>
+            <input type="number" name="mesRet" min="1" max="12" [(ngModel)]="requisicao.dataRetirada.mes">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Ano:
+        </td>
+        <td>
+            <input type="number" name="anoRet" min="2021" [(ngModel)]="requisicao.dataRetirada.ano">
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <h2>Data de devolução:</h2>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Dia:
+        </td>
+        <td>
+            <input type="number" name="diaDev" min="1" max="31" [(ngModel)]="requisicao.dataDevolucao.dia">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Mês:
+        </td>
+        <td>
+            <input type="number" name="mesDev" min="1" max="12" [(ngModel)]="requisicao.dataDevolucao.mes">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Ano:
+        </td>
+        <td>
+            <input type="number" name="anoDev" min="2021" [(ngModel)]="requisicao.dataDevolucao.ano">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button type="button" (click)="this.requisitar(requisicao)">Requisitar</button>
+        </td>
+    </tr>
+</table>

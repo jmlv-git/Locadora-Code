@@ -1,0 +1,44 @@
+<h1>Requisições</h1>
+<ul *ngFor="let req of this.reqs; index as i">
+    <li>
+        
+        <table>
+            <tr>
+                <td>
+                    Data de retirada: 
+                </td> 
+                <td>
+                    {{req.dataRetirada.dia}}/{{req.dataRetirada.mes}}/{{req.dataRetirada.ano}}
+                </td> 
+            </tr>
+            <tr>
+                <td>
+                    Data de devolução: 
+                </td> 
+                <td>
+                    {{req.dataDevolucao.dia}}/{{req.dataDevolucao.mes}}/{{req.dataDevolucao.ano}}
+                </td> 
+            </tr>         
+            <tr>
+                <td>
+                    Modelo do carro: 
+                </td> 
+                <td>
+                    {{req.modeloCarro}}
+                </td> 
+            </tr>
+            <tr>
+                <td>
+                    Status da requisição: 
+                </td> 
+                <td>
+                    {{req.status}}
+                </td> 
+                
+            </tr>  
+            <tr>
+                <button *ngIf="req.status=='pendente'" (click)="this.aprovaReq(req.id)">Aprovar</button>
+            </tr>       
+        </table>
+    </li>
+</ul>

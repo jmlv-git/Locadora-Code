@@ -1,0 +1,21 @@
+<section>
+    <div>
+        <h1>Login</h1>
+           
+        <label>Email</label>
+        <input  type="text"  [(ngModel)]="email" required = "required">
+        <label>Senha</label>
+        <input  type="password" [(ngModel)]="senha" required = "required">
+        
+       
+        <button (click)="logarNoSistema()" >ENTRAR</button>
+
+       
+            <button *ngIf = "this.permissao == true" routerLink = "{{routerLinkHome}}">
+                PODE ENTRAR
+            </button>
+
+
+    </div>
+</section>
+

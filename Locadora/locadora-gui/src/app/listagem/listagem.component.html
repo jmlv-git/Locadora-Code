@@ -1,0 +1,44 @@
+<section>
+    <h1 *ngIf = "usuario == 'Cliente'">Listagem de veículos (Usuário Cliente)</h1>
+    <h1 *ngIf = "usuario == 'ADM'" >Listagem de veículos (Usuário ADM)</h1>
+    <div>
+        <input type="text" [(ngModel)]="veiculo" placeholder="Exemplo: Fiat, HB20">
+        <button type="button" (click)="buscar(veiculo)">Buscar</button>
+    </div>
+    
+    <table *ngIf = "usuario == 'Cliente'" >
+        <tr>
+            <th>Nome</th>
+            <th>Quantidade</th>
+            <th>Operação</th>
+        </tr>
+    
+        <tr *ngFor = "let nome of listar">
+            <td> {{nome.nome}} </td>
+            <td *ngIf = "nome.disponivel != 0" > {{nome.quantidadeTotal - nome.alugado}} </td>  
+            <td> <button type="button" routerLink = "/solicitacao" >Solicitar</button> </td>
+        </tr>
+    </table>
+
+    <table class="tableAdm" *ngIf = "usuario == 'ADM'" >
+        <button type="button" routerLink = "/aprovacao">Solicitações</button> 
+
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Alugados</th>
+            <th>Disponivel</th>
+            <th>Quantidade</th>
+        </tr>
+
+        <tr *ngFor = "let nome of listar">
+            <td> {{nome.id}} </td>
+            <td> {{nome.nome}} </td>
+            <td> {{nome.alugado}} </td>
+            <td> {{nome.disponivel}} </td>
+            <td> {{nome.quantidadeTotal}} </td>  
+           
+        </tr>
+    </table>
+</section>
+

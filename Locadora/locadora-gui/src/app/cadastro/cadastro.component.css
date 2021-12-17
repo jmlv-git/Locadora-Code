@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.cadastroCliente {
+    height: 300px;
+}
+
+.cadastroAdm {
+    height: 360px;
+}
+
+section {
+    display: flex;
+    justify-content: space-around;
+    height: 70vh;      /* Altura da tela do monitor (100%) */
+    width: 1000px;
+    margin: auto;
+}
+
+div {
+    display: inline-block;
+    border:1px solid rgb(78, 103, 187);
+    border-radius: 5px;
+    background-image: linear-gradient(to right, rgba(66, 96, 180, 0.904),rgb(177, 27, 236));
+    width: 250px;
+    box-shadow: 2px 2px 5px black;
+}
+
+h1 {
+    padding-top: 20px;
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+input {
+    outline: none;
+    margin: 0px 20px 20px 20px;
+    width: 200px;
+}
+
+label {
+    margin-left: 20px;
+    display: block ;
+}
+
+button {
+    width: 100px;
+    height: 25px;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 75px;
+    margin-right: 75px;
+    cursor: pointer;
+}
+
+a {
+    display: block;
+}
+
