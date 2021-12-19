@@ -20,18 +20,17 @@ reqs:RequisicaoServer[]=[];
     
     
 
-      this.requisicaoService.getALLReq().subscribe({
-        next: (Requisicoes) => {
-          
-          this.reqs=Requisicoes;
-          console.log(this.reqs[0])
-          console.log(this.reqs)
-        },
-        error: (Falha) => {
-          alert("Falha na obtenção da lista")
-        }
-      });
-    
+    this.requisicaoService.getALLReq().subscribe({
+      next: (Requisicoes) => {
+        
+        this.reqs=Requisicoes;
+        
+      },
+      error: (Falha) => {
+        alert("Falha na obtenção da lista")
+      }
+    });
+
 
     
   }

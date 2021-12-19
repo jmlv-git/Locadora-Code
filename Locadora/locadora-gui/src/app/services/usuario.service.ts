@@ -8,7 +8,7 @@ import { Usuario } from '../comum/usuario';
 })
 export class UsuarioService {
   usuarios:Usuario[]=[];
-   url:string="http://localhost:3000";
+   url:string="http://localhost:3001";
   
   
   constructor(private http:HttpClient) {}

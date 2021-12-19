@@ -32,6 +32,8 @@ export class UsuarioController {
             if (this.usuarios[index].email == email && this.usuarios[index].senha == senha) {
                 permissao = true;
                 this.usuarioLogado = this.usuarios[index];
+                //talvez para identificar usuario logado, sejs melhor a gente retornar junto com a informação
+                //que foi logado com sucesso o indice do usuario logado em usuarios[]
                 return permissao;
             }   
         }

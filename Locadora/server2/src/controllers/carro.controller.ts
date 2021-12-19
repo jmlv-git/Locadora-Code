@@ -23,10 +23,15 @@ import {Carro} from "../models/carro";
 
 export class CarroController {
     
+    carrosNoSistema:Carro[] = [];
     carrosAlugados:Carro[]=[];
     carrosDisponiveis:Carro[]=[];
     
     constructor() {}
+
+    getCarros(): Carro[] {
+        return this.carrosNoSistema;
+    }
 
 
     getCarrosDisponiveis():Carro[] {
@@ -45,6 +50,7 @@ export class CarroController {
         }*/
 
         let novoCarro:Carro = new Carro(chassi, modelo, disponivel);
+        this.carrosNoSistema.push(novoCarro);
         if (disponivel) {
             this.carrosDisponiveis.push(novoCarro);
         }else{

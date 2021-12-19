@@ -9,7 +9,7 @@ import { RequisicaoServer } from '../comum/requisicaoServer';
 })
 export class RequisicaoService {
 
-  url:string="http://localhost:3000";
+  url:string="http://localhost:3001";
   
   
   constructor(private http:HttpClient) {}

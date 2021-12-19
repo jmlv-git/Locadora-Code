@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class ListagemService {
   carros:Carro[]=[];
-  url:string="http://localhost:3000";
+  url:string="http://localhost:3001";
 
   constructor(private http:HttpClient) { }
 
@@ -20,6 +20,17 @@ export class ListagemService {
     }
 
     return this.http.post<any>(`${this.url}/home/cliente`, {nome:veiculo} );
+  }
+
+  buscarCarrosAdm (veiculo:string): Observable<any> {
+
+    if (veiculo == undefined || veiculo == "") {   
+      /* Quando o usuário não especifica nada no campo de busca*/
+      veiculo = "indefinido"
+    }
+
+    return this.http.post<any>(`${this.url}/home/adm`, {nome:veiculo} );
+
   }
 
   getDadosLogin (): Observable<any>{

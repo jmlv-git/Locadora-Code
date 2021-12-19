@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Carro } from '../comum/carro';
 import { Data } from '../comum/data';
 import { Requisicao } from '../comum/requisicao';
 import { RequisicaoService } from '../services/requisicao.service';
@@ -9,9 +10,18 @@ import { RequisicaoService } from '../services/requisicao.service';
   styleUrls: ['./solicita-carro.component.css']
 })
 export class SolicitaCarroComponent implements OnInit {
-requisicao:Requisicao = new Requisicao();
+requisicao:Requisicao ;
+@Input() modeloCarro!:Carro;
+@Input() usuario!:string;
+  
 
-  constructor(private requisicaoService:RequisicaoService) { }
+constructor(private requisicaoService:RequisicaoService) { 
+    this.requisicao=new Requisicao();
+    this.requisicao.modeloCarro=this.modeloCarro;
+    this.requisicao.usuario=this.usuario;
+    console.log(this.requisicao)
+    console.log(this.modeloCarro)
+  }
 
 
 
@@ -63,7 +73,8 @@ requisicao:Requisicao = new Requisicao();
   }
 
   requisitar(req:Requisicao){
-    console.log(req);
+    req.modeloCarro=this.modeloCarro;
+    req.usuario=this.usuario;
     if (this.validarData(req.dataRetirada)&&this.validarData(req.dataDevolucao)&&
      this.validar2Datas(req.dataRetirada,req.dataDevolucao)) {
 
@@ -83,6 +94,8 @@ requisicao:Requisicao = new Requisicao();
   }
 
   ngOnInit(): void {
+    this.requisicao.modeloCarro=this.modeloCarro;
+    this.requisicao.usuario=this.usuario;
   }
 
 }

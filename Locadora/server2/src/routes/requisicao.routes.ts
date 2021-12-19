@@ -1,6 +1,7 @@
 import { Router, Request, Response } from "express";
 import { RequisicaoController } from "../controllers/requisicao.controller";
 import { UsuarioController } from "../controllers/usuario.controller";
+import { Carro } from "../models/carro";
 import { Requisicao } from "../models/requisicao";
 import { Usuario } from "../models/usuario";
 
@@ -23,8 +24,13 @@ requisicaoRouter.route("/")   //get para a rota inicial
         const diaDev=body.dataDevolucao.dia;
         const mesDev=body.dataDevolucao.mes;
         const anoDev=body.dataDevolucao.ano;
-        const modeloCarro=body.modeloCarro; 
-        let requisita = requisicaoController.registrarReq(new Requisicao(diaRet,mesRet,anoRet,diaDev,mesDev,anoDev,modeloCarro)); 
+        const modeloCarroChassi=body.modeloCarro.chassi; 
+        const modeloCarroModelo=body.modeloCarro.modelo; 
+        const modeloCarroDisponivel=body.modeloCarro.disponivel; 
+        const carro=new Carro(modeloCarroChassi,modeloCarroModelo,modeloCarroDisponivel);
+        const emailCliente = body.emailCliente;
+        const requisicao = new Requisicao(diaRet,mesRet,anoRet,diaDev,mesDev,anoDev,carro,emailCliente);
+        let requisita = requisicaoController.registrarReq(requisicao); 
         
         if (requisita) {
             return res.json({Sucesso:"Requisição realizada com sucesso"})
