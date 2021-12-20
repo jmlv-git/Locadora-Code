@@ -15,6 +15,7 @@ export class ListagemComponent implements OnInit {
   listar:CarroCliente[] = [];
   veiculo!:string;
   usuario!:string;
+  emailUsuario!:string;
   telaReq:boolean=false;
   modeloEscolhido:Carro= new Carro("-666","Fusca", false);
 
@@ -118,6 +119,7 @@ export class ListagemComponent implements OnInit {
        }else {
         this.usuario = "Cliente"
        }
+       this.emailUsuario=sucesso.usuarioLogado.email;
       },
       error: (err) => {
        alert("Nenhum usuário logado")

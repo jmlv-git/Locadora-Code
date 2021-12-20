@@ -28,7 +28,7 @@ requisicaoRouter.route("/")   //get para a rota inicial
         const modeloCarroModelo=body.modeloCarro.modelo; 
         const modeloCarroDisponivel=body.modeloCarro.disponivel; 
         const carro=new Carro(modeloCarroChassi,modeloCarroModelo,modeloCarroDisponivel);
-        const emailCliente = body.emailCliente;
+        const emailCliente = body.usuario;
         const requisicao = new Requisicao(diaRet,mesRet,anoRet,diaDev,mesDev,anoDev,carro,emailCliente);
         let requisita = requisicaoController.registrarReq(requisicao); 
         
